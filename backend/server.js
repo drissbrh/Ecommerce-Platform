@@ -9,7 +9,7 @@ require("dotenv").config({ path: "./backend/config/config.env" });
 
 connectDB();
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use("/api/sneakers", sneakerRoutes);
 
@@ -23,7 +23,6 @@ if (process.env.NODE_ENV === "production") {
     res.send("Api Is Running");
   });
 }
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on PORT:${PORT}`.yellow.bold);
