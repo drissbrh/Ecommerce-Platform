@@ -1,0 +1,47 @@
+.cartitem {
+  width: 100%;
+  display: grid;
+  padding: 1rem 1rem 1rem 1.5rem;
+  grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+  gap: 8px;
+  background-color: #fff;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  place-items: center;
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cartitem__name {
+  text-decoration: none;
+  color: #00072d;
+}
+
+.cartitem__price {
+  font-weight: 500;
+}
+/*
+.cartitem__image > img {
+  width: 105px;
+}*/
+
+.cartitem__select {
+  border-radius: 15px;
+  padding: 1rem 15px;
+  cursor: pointer;
+}
+
+.cartitem__deleteBtn {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #0a2472;
+  background-color: #0a2472;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.cartitem__deleteBtn:hover {
+  color: red;
+  background-color: #fff;
+}
