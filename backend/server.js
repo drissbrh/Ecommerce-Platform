@@ -1,11 +1,10 @@
 const express = require("express");
 const colors = require("colors");
 const connectDB = require("./config/db");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const path = require("path");
 const sneakerRoutes = require("./routes/sneakerRoutes");
 
-require("dotenv").config({ path: "./backend/config/config.env" });
+require("dotenv").config({});
 
 connectDB();
 const app = express();
