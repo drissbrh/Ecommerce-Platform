@@ -10,11 +10,6 @@ require("dotenv").config({ path: "./backend/config/config.env" });
 connectDB();
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
-
-app.get("/", (req, res) => {
-  res.send("Big Big time man");
-});
 
 app.use("/api/sneakers", sneakerRoutes);
 
