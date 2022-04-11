@@ -1,0 +1,20 @@
+.paginate {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.paginate > a {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #00072d;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.paginate > a:hover {
+  color: #0e6ba8;
+}

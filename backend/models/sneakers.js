@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const sneakerSchema = new mongoose.Schema({
   brand: {
@@ -46,4 +46,4 @@ const sneakerSchema = new mongoose.Schema({
 
 const Sneakers = mongoose.model("sneakers", sneakerSchema);
 
-module.exports = Sneakers;
+export default Sneakers;

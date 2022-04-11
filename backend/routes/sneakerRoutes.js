@@ -1,12 +1,12 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+const sneakerRoutes = express.Router();
 
-const {
+import {
   getProducts,
   getProductById,
-} = require("../controllers/sneakerControllers");
+} from "../controllers/sneakerControllers.js";
 
-router.get("/", getProducts);
-router.get("/:id", getProductById);
+sneakerRoutes.get("/", getProducts);
+sneakerRoutes.get("/:id", getProductById);
 
-module.exports = router;
+export default sneakerRoutes;

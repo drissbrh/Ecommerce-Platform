@@ -1,8 +1,8 @@
-require("dotenv").config({ path: "./backend/config/" });
-
-const sneakerData = require("./data/sneakers");
-const connectDB = require("./config/db");
-const sneakers = require("./models/sneakers");
+import dotenv from "dotenv";
+import sneakerData from "./data/sneakers.js";
+import connectDB from "./config/db.js";
+import sneakers from "./models/sneakers.js";
+dotenv.config();
 
 connectDB();
 

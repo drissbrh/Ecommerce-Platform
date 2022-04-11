@@ -9,8 +9,10 @@ export const getProductReducer = (state = { products: [] }, action) => {
       };
     case actionTypes.GET_PRODUCT_SUCCESS:
       return {
-        products: action.payload,
         loading: false,
+        products: action.payload.products,
+        pages: action.payload.pages,
+        page: action.payload.page,
       };
     case actionTypes.GET_PRODUCT_FAIL:
       return {

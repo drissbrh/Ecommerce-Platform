@@ -22,6 +22,7 @@ function App() {
         <main className="app">
           <Switch>
             <Route exact path="/" component={HomeScreen} />
+            <Route exact path="/page/:pageNumber" component={HomeScreen} />
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/cart" component={CartScreen} />
           </Switch>
