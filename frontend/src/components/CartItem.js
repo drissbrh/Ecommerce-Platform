@@ -11,7 +11,7 @@ const CartItem = (props) => {
       <div className="cartitem__image">
         <img src={image} alt={name} />
       </div>
-      <Link to={`/product/${product}`} className="cartitem__name">
+      <Link to={`/sneaker/${product}`} className="cartitem__name">
         <p>{name}</p>
       </Link>
 

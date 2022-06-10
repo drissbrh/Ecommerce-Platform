@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Product.css";
+import "./SneakerItem.css";
 
-const Product = ({
+const SneakerItem = ({
   productId,
   brand,
   colorway,
@@ -16,9 +16,9 @@ const Product = ({
   media,
 }) => {
   return (
-    <div className="product">
+    <div className="sneaker">
       <img src={media} alt="sneak" />
-      <div className="product__info">
+      <div className="sneaker__info">
         <p className="info__name">{name}</p>
         <p className="info__brand">Brand: {brand}</p>
         <p className="info__color">{colorway}</p>
@@ -26,7 +26,7 @@ const Product = ({
 
         <p className="info__price">${retailPrice}</p>
 
-        <Link to={`/product/${productId}`} className="info__button">
+        <Link to={`/sneaker/${productId}`} className="info__button">
           More
         </Link>
       </div>
@@ -34,4 +34,4 @@ const Product = ({
   );
 };
 
-export default Product;
+export default SneakerItem;

@@ -1,24 +1,24 @@
-import Sneakers from "../models/sneakers.js";
+import Sneaker from "../models/sneakerModel.js";
 
-const getProducts = async (req, res) => {
+const getAllSneakers = async (req, res) => {
   const pageSize = 15;
   const page = Number(req.query.pageNumber) || 1;
   try {
-    const count = await Sneakers.countDocuments();
+    const count = await Sneaker.countDocuments();
 
-    const products = await Sneakers.find()
+    const sneakers = await Sneaker.find()
       .limit(pageSize)
       .skip(pageSize * (page - 1));
-    res.json({ products, page, pages: Math.ceil(count / pageSize) });
+    res.json({ sneakers, page, pages: Math.ceil(count / pageSize) });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }
 };
 
-const getProductById = async (req, res) => {
+const getSneakerById = async (req, res) => {
   try {
-    const sneaker = await Sneakers.findById(req.params.id);
+    const sneaker = await Sneaker.findById(req.params.id);
 
     res.json(sneaker);
   } catch (error) {
@@ -27,4 +27,4 @@ const getProductById = async (req, res) => {
   }
 };
 
-export { getProducts, getProductById };
+export { getAllSneakers, getSneakerById };

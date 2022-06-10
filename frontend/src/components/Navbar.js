@@ -29,6 +29,9 @@ const Navbar = ({ click }) => {
             </span>
           </Link>
         </li>
+        <li>
+          <Link to="/login">Sign In</Link>
+        </li>
       </ul>
       <div className="threeLines" onClick={click}>
         <div></div>

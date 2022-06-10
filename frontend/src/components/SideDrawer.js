@@ -32,6 +32,9 @@ const SideDrawer = ({ show, click }) => {
             </span>
           </Link>
         </li>
+        <li>
+          <Link to="/login">Sign In</Link>
+        </li>
       </ul>
     </div>
   );

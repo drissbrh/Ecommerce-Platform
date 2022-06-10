@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
-import "./ProductScreen.css";
+import "./SneakerScreen.css";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams, useNavigate } from "react-router-dom";
 
 //Actions
-import { getProductDetails as productDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
+import { getSneakerDetails } from "../redux/actions/sneakerActions";
 
-const ProductScreen = ({ match, history }) => {
+const SneakerScreen = ({}) => {
+  const navigate = useNavigate();
+  const { id } = useParams();
   const [qty, setQty] = useState(1);
-  const getProductDetails = useSelector((state) => state.getProductDetails);
-  const { product, loading, error } = getProductDetails;
+  const sneakerDetails = useSelector((state) => state.sneakerDetails);
+  const { sneaker, loading, error } = sneakerDetails;
 
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
-    history.push(`/cart`);
+    dispatch(addToCart(sneaker._id, qty));
+    navigate(`/cart`);
   };
   useEffect(() => {
-    if (product && match.params.id !== product._id) {
-      dispatch(productDetails(match.params.id));
+    if (sneaker && id !== sneaker._id) {
+      dispatch(getSneakerDetails(id));
     }
-  }, [dispatch, product, match]);
+  }, [dispatch, sneaker, id]);
 
   return (
     <div className="productscreen">
@@ -35,17 +38,17 @@ const ProductScreen = ({ match, history }) => {
         <>
           <div className="productscreen__left">
             <div className="left__image">
-              <img src={product.media} alt={product.name} />
+              <img src={sneaker.media} alt={sneaker.name} />
             </div>
             <div className="left__info">
-              <p className="left__name">{product.name}</p>
-              <p>Price: ${product.retailPrice}</p>
-              <p>{product.colorway}</p>
+              <p className="left__name">{sneaker.name}</p>
+              <p>Price: ${sneaker.retailPrice}</p>
+              <p>{sneaker.colorway}</p>
             </div>
             <div className="productscreen__right">
               <div className="right__info">
                 <p>
-                  Price:<span> ${product.retailPrice}</span>
+                  Price:<span> ${sneaker.retailPrice}</span>
                 </p>
                 <p>
                   Status:<span> In Stock</span>
@@ -79,4 +82,4 @@ const ProductScreen = ({ match, history }) => {
   );
 };
 
-export default ProductScreen;
+export default SneakerScreen;

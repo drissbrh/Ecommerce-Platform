@@ -3,21 +3,24 @@ import "./HomeScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 
 //components
-import Product from "../components/Product";
+import SneakerItem from "../components/SneakerItem";
 
 //Actions
-import { getProducts as listProducts } from "../redux/actions/productActions";
+
 import Paginate from "../components/Paginate";
+import { AllSneakers } from "../redux/actions/sneakerActions";
+import { useParams } from "react-router-dom";
 
-const HomeScreen = ({ match }) => {
-  const pageNumber = match.params.pageNumber || 1;
+const HomeScreen = () => {
+  const { Page } = useParams();
+  const pageNumber = Page;
   const dispatch = useDispatch();
-  const getProducts = useSelector((state) => state.getProducts);
 
-  const { products, error, loading, page, pages } = getProducts;
+  const sneakersList = useSelector((state) => state.sneakersList);
+  const { sneakers, error, loading, page, pages } = sneakersList;
 
   useEffect(() => {
-    dispatch(listProducts(pageNumber));
+    dispatch(AllSneakers(pageNumber));
   }, [dispatch, pageNumber]);
   return (
     <div className="homescreen">
@@ -31,22 +34,24 @@ const HomeScreen = ({ match }) => {
           <h2>{error}</h2>
         ) : (
           <>
-            {products.map((product) => (
-              <Product
-                key={product._id}
-                productId={product._id}
-                name={product.name}
-                brand={product.brand}
-                year={product.year}
-                colorway={product.colorway}
-                retailPrice={product.retailPrice}
-                media={product.media}
-              />
-            ))}
-            <Paginate pages={pages} page={page} />
+            {sneakers &&
+              sneakers.map((product) => (
+                <SneakerItem
+                  key={product._id}
+                  productId={product._id}
+                  name={product.name}
+                  brand={product.brand}
+                  year={product.year}
+                  colorway={product.colorway}
+                  retailPrice={product.retailPrice}
+                  media={product.media}
+                />
+              ))}
+            <></>
           </>
         )}
       </div>
+      {<Paginate pages={pages} page={page} />}
     </div>
   );
 };

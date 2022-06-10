@@ -32,10 +32,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.5rem;
   text-decoration: none;
   color: #00072d;
-  font-size: 1.2rem;
+  font-size: 2rem;
   flex: 1;
   transition: 0.2s ease-in-out;
 }

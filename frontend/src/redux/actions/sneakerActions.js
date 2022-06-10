@@ -1,12 +1,20 @@
-import * as actionTypes from "../constants/productConstants";
 import axios from "axios";
+import {
+  SNEAKER_DETAILS_FAIL,
+  SNEAKER_DETAILS_REQUEST,
+  SNEAKER_DETAILS_RESET,
+  SNEAKER_DETAILS_SUCCESS,
+  SNEAKER_LIST_FAIL,
+  SNEAKER_LIST_REQUEST,
+  SNEAKER_LIST_SUCCESS,
+} from "../constants/sneakerConstants";
 
-export const getProducts =
+export const AllSneakers =
   (pageNumber = "") =>
   async (dispatch) => {
     try {
       dispatch({
-        type: actionTypes.GET_PRODUCT_REQUEST,
+        type: SNEAKER_LIST_REQUEST,
       });
 
       const { data } = await axios.get(
@@ -14,12 +22,12 @@ export const getProducts =
       );
 
       dispatch({
-        type: actionTypes.GET_PRODUCT_SUCCESS,
+        type: SNEAKER_LIST_SUCCESS,
         payload: data,
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.GET_PRODUCT_FAIL,
+        type: SNEAKER_LIST_FAIL,
         payload:
           error.response && error.response.data.message
             ? error.response.data.message
@@ -28,21 +36,21 @@ export const getProducts =
     }
   };
 
-export const getProductDetails = (id) => async (dispatch) => {
+export const getSneakerDetails = (id) => async (dispatch) => {
   try {
     dispatch({
-      type: actionTypes.GET_PRODUCT_DETAILS_REQUEST,
+      type: SNEAKER_DETAILS_REQUEST,
     });
 
     const { data } = await axios.get(`/api/sneakers/${id}`);
 
     dispatch({
-      type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
+      type: SNEAKER_DETAILS_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: actionTypes.GET_PRODUCT_DETAILS_FAIL,
+      type: SNEAKER_DETAILS_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -51,8 +59,8 @@ export const getProductDetails = (id) => async (dispatch) => {
   }
 };
 
-export const removeProductDetails = () => (dispatch) => {
+export const removeSneakerDetails = () => (dispatch) => {
   dispatch({
-    type: actionTypes.GET_PRODUCT_DETAILS_RESET,
+    type: SNEAKER_DETAILS_RESET,
   });
 };

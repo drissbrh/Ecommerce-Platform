@@ -4,6 +4,7 @@ import connectDB from "./config/db.js";
 import path from "path";
 import sneakerRoutes from "./routes/sneakerRoutes.js";
 import dotenv from "dotenv";
+import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -30,6 +31,9 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running....");
   });
 }
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
