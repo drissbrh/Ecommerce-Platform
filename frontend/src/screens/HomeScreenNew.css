@@ -1,0 +1,44 @@
+.homescreennew {
+  position: absolute;
+  height: 70vh;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+.sneakerS {
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sneakerS > img {
+  width: 400px;
+}
+.infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infos > section {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #f87060;
+  color: #000000;
+}
+.infos > p {
+  font-size: 75px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.homescreennew > button {
+  width: 200px;
+  padding: 25px;
+  background-color: black;
+  color: #ffffff;
+  font-size: 25px;
+  text-transform: uppercase;
+}

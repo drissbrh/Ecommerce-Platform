@@ -3,22 +3,33 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./LoginScreen.css";
+import { loginUser } from "../redux/actions/userActions";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const location = useLocation();
   const navigate = useNavigate();
 
   const [message, setMessage] = useState(null);
 
-  const handleSubmit = () => {};
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo, error, loading } = userLogin;
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [userInfo, navigate]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginUser(email, password));
+  };
 
   return (
     <div className="loginscreen">
       <h1 className="login__header">Sign In</h1>
-
+      {error && <div className="signIn__error">{error}</div>}
+      {loading && <div className="spinner2"></div>}
       <form onSubmit={handleSubmit} className="form__elements">
         <div className="username__section">
           <label>Email</label>

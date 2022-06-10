@@ -2,9 +2,12 @@ import express from "express";
 import colors from "colors";
 import connectDB from "./config/db.js";
 import path from "path";
-import sneakerRoutes from "./routes/sneakerRoutes.js";
 import dotenv from "dotenv";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+
+//Routes
+import sneakerRoutes from "./routes/sneakerRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -14,6 +17,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/sneakers", sneakerRoutes);
+app.use("/api/users", userRoutes);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

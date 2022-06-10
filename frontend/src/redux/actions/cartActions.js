@@ -1,10 +1,10 @@
 import axios from "axios";
-import * as actionTypes from "../constants/cartConstants";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/cartConstants";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/sneakers/${id}`);
   dispatch({
-    type: actionTypes.ADD_TO_CART,
+    type: ADD_TO_CART,
     payload: {
       product: data._id,
       name: data.name,
@@ -18,7 +18,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({
-    type: actionTypes.REMOVE_FROM_CART,
+    type: REMOVE_FROM_CART,
     payload: id,
   });
   localStorage.setItem("myCart", JSON.stringify(getState().cart.cartItems));

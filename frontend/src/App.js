@@ -12,6 +12,8 @@ import { useState } from "react";
 import SneakerScreen from "./screens/SneakerScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import HomeScreenNew from "./screens/HomeScreenNew";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -24,10 +26,12 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomeScreen />} />
           <Route exact path="/page/:pageNumber" element={<HomeScreen />} />
+          <Route exact path="/home/" element={<HomeScreenNew />} />
           <Route path="/sneaker/:id" element={<SneakerScreen />} />
           <Route path="/cart" element={<CartScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
         </Routes>
       </main>
     </Router>

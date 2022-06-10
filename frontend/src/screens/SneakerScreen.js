@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { addToCart } from "../redux/actions/cartActions";
 import { getSneakerDetails } from "../redux/actions/sneakerActions";
 
-const SneakerScreen = ({}) => {
+const SneakerScreen = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [qty, setQty] = useState(1);

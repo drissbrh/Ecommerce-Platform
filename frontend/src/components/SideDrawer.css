@@ -23,6 +23,23 @@
   flex-direction: column;
 }
 
+.logout__sidedrawer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #00072d;
+  font-size: 2rem;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.2s ease-in-out;
+}
+.logout__sidedrawer:hover {
+  background: #0a2472;
+  color: #f4f4f4;
+}
+
 .sidedrawer__links > li {
   display: flex;
   align-items: center;
@@ -58,6 +75,7 @@
   height: 30px;
   border-radius: 50%;
   margin-left: 8px;
+  font-weight: 500;
   background-color: #0e6ba8;
   color: #f4f4f4;
   font-size: 1rem;

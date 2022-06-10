@@ -8,8 +8,24 @@ import {
   SneakersListReducer,
 } from "./reducers/sneakerReducer";
 import { cartReducer } from "./reducers/cartReducer";
+import {
+  userDeleteReducer,
+  userDetailsReducer,
+  userListReducer,
+  userLoginReducer,
+  userRegisterReducer,
+  userUpdateProfileReducer,
+  userUpdateReducer,
+} from "./reducers/userReducer";
 
 const reducer = combineReducers({
+  userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
+  userList: userListReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
+  userDelete: userDeleteReducer,
+  userUpdate: userUpdateReducer,
   sneakersList: SneakersListReducer,
   sneakerDetails: SneakerDetailsReducer,
   cart: cartReducer,
@@ -20,9 +36,16 @@ const middlware = [thunk];
 const cartItemsInLocaleStorage = localStorage.getItem("myCart")
   ? JSON.parse(localStorage.getItem("myCart"))
   : [];
+
+const UserInfoInLocaleStorage = localStorage.getItem("UserInfos")
+  ? JSON.parse(localStorage.getItem("UserInfos"))
+  : null;
 const initialState = {
   cart: {
     cartItems: cartItemsInLocaleStorage,
+  },
+  userLogin: {
+    userInfo: UserInfoInLocaleStorage,
   },
 };
 

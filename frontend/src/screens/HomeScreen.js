@@ -34,24 +34,23 @@ const HomeScreen = () => {
           <h2>{error}</h2>
         ) : (
           <>
-            {sneakers &&
-              sneakers.map((product) => (
-                <SneakerItem
-                  key={product._id}
-                  productId={product._id}
-                  name={product.name}
-                  brand={product.brand}
-                  year={product.year}
-                  colorway={product.colorway}
-                  retailPrice={product.retailPrice}
-                  media={product.media}
-                />
-              ))}
+            {sneakers.map((product) => (
+              <SneakerItem
+                key={product._id}
+                productId={product._id}
+                name={product.name}
+                brand={product.brand}
+                year={product.year}
+                colorway={product.colorway}
+                retailPrice={product.retailPrice}
+                media={product.media}
+              />
+            ))}
             <></>
           </>
         )}
       </div>
-      {<Paginate pages={pages} page={page} />}
+      {/* {<Paginate pages={pages} page={page} />} */}
     </div>
   );
 };
