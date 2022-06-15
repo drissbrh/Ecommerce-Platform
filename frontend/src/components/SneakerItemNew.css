@@ -1,0 +1,66 @@
+.sneakerNew {
+  width: 300px;
+  padding: 1rem;
+  background-color: #fefefe;
+  border-radius: 5px;
+  border: 2px solid black;
+  /* box-shadow: 0 1px 40px rgba(0, 0, 0, 0.1); */
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sneakerNew > img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.sneaker__infoNew > p {
+  margin-bottom: 8px;
+}
+
+.info__nameNew {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding-top: 1.9rem;
+}
+
+.info__priceNew {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.info__buttonNew {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #00072d;
+  padding: 8px 6px;
+  margin: 2rem auto;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  border: 2px solid #00072d;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.2s ease-in-out;
+}
+.info__buttonNew:hover {
+  background-color: #0a2472;
+  color: #f4f4f4;
+}
+
+@media (max-width: 1000px) {
+  .sneakerNew {
+    width: 350px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sneakerNew {
+    width: 400px;
+  }
+}

@@ -27,7 +27,7 @@ const Navbar = ({ click }) => {
       </div>
       <ul className="navbar__links">
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/home">Shop</Link>
         </li>
         {userInfo ? (
           <>

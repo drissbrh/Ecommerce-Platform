@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import SneakerItem from "../components/SneakerItem";
 
 //Actions
-
 import Paginate from "../components/Paginate";
 import { AllSneakers } from "../redux/actions/sneakerActions";
 import { useParams } from "react-router-dom";
@@ -50,7 +49,7 @@ const HomeScreen = () => {
           </>
         )}
       </div>
-      {/* {<Paginate pages={pages} page={page} />} */}
+      {<Paginate pages={pages} page={page} />}
     </div>
   );
 };

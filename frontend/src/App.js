@@ -14,6 +14,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import HomeScreenNew from "./screens/HomeScreenNew";
+import SearchScreen from "./screens/SearchScreen";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/" element={<HomeScreen />} />
           <Route exact path="/page/:pageNumber" element={<HomeScreen />} />
           <Route exact path="/home/" element={<HomeScreenNew />} />
+          <Route exact path="/search/" element={<SearchScreen />} />
           <Route path="/sneaker/:id" element={<SneakerScreen />} />
           <Route path="/cart" element={<CartScreen />} />
           <Route path="/login" element={<LoginScreen />} />

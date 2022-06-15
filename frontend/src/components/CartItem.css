@@ -6,27 +6,29 @@
   gap: 8px;
   background-color: #fff;
   margin-bottom: 1.5rem;
-  border-radius: 15px;
+  border-radius: 9px;
+  border: 2px solid black;
   place-items: center;
-  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.1);
 }
 
 .cartitem__name {
   text-decoration: none;
   color: #00072d;
+  font-weight: 500;
 }
 
 .cartitem__price {
   font-weight: 500;
 }
-/*
+
 .cartitem__image > img {
   width: 105px;
-}*/
+}
 
 .cartitem__select {
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 1rem 15px;
+  border: 2px solid black;
   cursor: pointer;
 }
 

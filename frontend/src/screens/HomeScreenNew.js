@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import "./HomeScreenNew.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AllSneakers } from "../redux/actions/sneakerActions";
+import convere from "../assets/seaConverse.jpg";
+import { motion } from "framer-motion";
 
 const HomeScreenNew = () => {
   const dispatch = useDispatch();
@@ -17,18 +19,35 @@ const HomeScreenNew = () => {
   return (
     <div className="homescreennew">
       <div className="sneakerS">
-        {sneakers && sneakers[2] && (
+        {sneakers && sneakers[6] && (
           <>
-            <img src={sneakers[2].media} alt="jayid" />
+            <motion.div
+              className="sneaker__home"
+              initial={{ opacity: 0, x: -100, y: 0, scale: 1 }}
+              animate={{
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotate: 0,
+                opacity: 1,
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <img src={sneakers[6].media} alt="jayid" />
+            </motion.div>
             <div className="infos">
-              <p>{sneakers[2].name}</p>
-              <section></section>
+              <p>{sneakers[6].name}</p>
             </div>
           </>
         )}
       </div>
+      <Link to="/search">Buy Now</Link>
 
-      <button>Buy Now</button>
+      {/* <div className="before__footer">
+        <h3>Just Arrived</h3>
+        <p>Be the first to shop our new arrivals</p>
+      </div> */}
+      <footer className="home__footer"></footer>
     </div>
   );
 };

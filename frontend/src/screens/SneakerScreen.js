@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SneakerScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 //Actions
 import { addToCart } from "../redux/actions/cartActions";
@@ -36,16 +37,56 @@ const SneakerScreen = () => {
         <h2>{error}</h2>
       ) : (
         <>
-          <div className="productscreen__left">
-            <div className="left__image">
+          <div className="productscreen__inside">
+            <motion.div
+              className="left__image"
+              initial={{ opacity: 0, x: -100, y: 0, scale: 1 }}
+              animate={{
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotate: 0,
+                opacity: 1,
+              }}
+              transition={{
+                type: "spring",
+                damping: 10,
+                stiffness: 360,
+              }}
+            >
               <img src={sneaker.media} alt={sneaker.name} />
-            </div>
-            <div className="left__info">
-              <p className="left__name">{sneaker.name}</p>
-              <p>Price: ${sneaker.retailPrice}</p>
+            </motion.div>
+
+            <motion.div
+              className="left__info"
+              initial={{ opacity: 0, x: 100, y: 0, scale: 1 }}
+              animate={{
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotate: 0,
+                opacity: 1,
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="left__name">{sneaker.name}</h3>
+              <p>
+                <span>Title:</span> {sneaker.title}
+              </p>
               <p>{sneaker.colorway}</p>
-            </div>
-            <div className="productscreen__right">
+            </motion.div>
+            <motion.div
+              className="productscreen__right"
+              initial={{ opacity: 0, x: 100, y: 0, scale: 1 }}
+              animate={{
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotate: 0,
+                opacity: 1,
+              }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="right__info">
                 <p>
                   Price:<span> ${sneaker.retailPrice}</span>
@@ -74,7 +115,7 @@ const SneakerScreen = () => {
                   </button>
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </>
       )}

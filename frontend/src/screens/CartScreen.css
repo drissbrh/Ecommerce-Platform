@@ -23,16 +23,15 @@
 }
 
 .cartscreen__right {
-  border-radius: 15px;
+  border-radius: 9px;
 
   height: fit-content;
   flex: 0.3;
-  background-color: #fff;
-  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
 }
 
 .cartscreen__right div {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2.5px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
 }
 
@@ -53,10 +52,11 @@
   width: 100%;
   border: 2px solid #fff;
   color: #fff;
-  font-family: "Rubik", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 500;
+  font-size: 17px;
   background-color: #0a2472;
-  border-radius: 25px;
+  border-radius: 9px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }

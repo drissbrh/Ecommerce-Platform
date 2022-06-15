@@ -1,14 +1,13 @@
 .productscreen {
   max-width: 1700px;
-
   margin: 5rem auto;
   display: flex;
-  flex-direction: row;
 }
 
-.productscreen__left {
-  display: flex;
-  flex: 0.8;
+.productscreen__inside {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 2fr 1fr 1fr;
 }
 
 .right__info > p > select {
@@ -44,12 +43,12 @@
 .left__info {
   margin: 1rem;
   flex: 0.4;
-  background: #fff;
+  background: white;
   height: fit-content;
   font-size: 1.2rem;
   font-weight: 300;
-  border-radius: 15px;
-  box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 2px solid black;
 }
 
 .left__name {
@@ -57,9 +56,19 @@
   font-size: 1.6rem;
 }
 
+.left__info > p > span {
+  font-weight: 500;
+}
+.left__info > h3 {
+  padding: 1.2rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
 .left__info > p,
 .right__info > p {
   padding: 1.2rem;
+  font-weight: 400;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -68,15 +77,12 @@
   border: none;
 }
 
-.productscreen__right {
-  flex: 0.2;
-}
 .right__info {
-  width: 250px;
+  width: 300px;
   margin: 1rem;
   background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 1px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 2px solid black;
 }
 
 .right__info p {
@@ -89,25 +95,27 @@
 .right__info p > button {
   grid-column: 1/-1;
   width: 100%;
-  padding: 10px 16px;
-  border-radius: 25px;
-  border: 1px solid #f4f4f4;
+  padding: 20px 0px;
+  border-radius: 5px;
+  border: 2px solid #0a2472;
   background-color: #0a2472;
   color: white;
-  font-family: "Rubik", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 500;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
 .right__info p > button:hover {
   color: #171717;
-  border: 1px solid #0a2472;
-  background-color: #f4f4f4;
+  border: 2px solid #0a2472;
+  background-color: transparent;
 }
 
 .right__info select {
   padding: 10px 16px;
-  border-radius: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 @media (max-width: 960px) {
@@ -115,7 +123,8 @@
     flex-direction: column;
   }
 
-  .productscreen__left {
+  .productscreen__inside {
+    display: flex;
     flex-direction: column;
     flex: 1;
   }

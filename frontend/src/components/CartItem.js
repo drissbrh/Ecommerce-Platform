@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./CartItem.css";
@@ -7,7 +8,18 @@ const CartItem = (props) => {
     props;
 
   return (
-    <div className="cartitem">
+    <motion.div
+      className="cartitem"
+      initial={{ opacity: 0, x: 0, y: 100, scale: 1 }}
+      animate={{
+        x: 0,
+        y: 0,
+        scale: 1,
+        rotate: 0,
+        opacity: 1,
+      }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="cartitem__image">
         <img src={image} alt={name} />
       </div>
@@ -35,7 +47,7 @@ const CartItem = (props) => {
       <button className="cartitem__deleteBtn" onClick={removeHandler}>
         <i className="fas fa-trash"></i>
       </button>
-    </div>
+    </motion.div>
   );
 };
 

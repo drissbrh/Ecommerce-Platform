@@ -8,6 +8,7 @@ import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 //components
 import CartItem from "../components/CartItem";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
@@ -56,15 +57,32 @@ const CartScreen = () => {
             </h1>
           )}
         </div>
-        <div className="cartscreen__right">
+        <motion.div
+          className="cartscreen__right"
+          initial={{ opacity: 0, x: 100, y: 0, scale: 1 }}
+          animate={{
+            x: 0,
+            y: 0,
+            scale: 1,
+            rotate: 0,
+            opacity: 1,
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 260,
+          }}
+        >
           <div className="cartscreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button>Proceed To Checkout</button>
+            <button onClick={() => console.log("ana nachit")}>
+              Proceed To Checkout
+            </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
