@@ -2,6 +2,9 @@
 
 It's a intermediate project made with React, Redux, MongoDB, Express & NodeJS, fully functional and Responsive, with a good looking UI and a better UX
 
+### Live Demo
+[Live demo is here](http://sneakers-store-app1.herokuapp.com)
+
 ### Version
 
 1.0.0
