@@ -17,7 +17,7 @@ const LoginScreen = () => {
   const { userInfo, error, loading } = userLogin;
   useEffect(() => {
     if (userInfo) {
-      navigate("/");
+      navigate("/home");
     }
   }, [userInfo, navigate]);
   const handleSubmit = (e) => {

@@ -23,7 +23,7 @@ const getSneakerById = async (req, res) => {
     res.json(sneaker);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Yawgi Error" });
+    res.status(500).json({ message: "No sneaker found" });
   }
 };
 

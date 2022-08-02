@@ -37,7 +37,7 @@ const SearchScreen = () => {
         <input
           type="text"
           value={search}
-          placeholder="Search by city"
+          placeholder="Search by name"
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>

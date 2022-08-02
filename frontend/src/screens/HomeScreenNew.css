@@ -1,59 +1,20 @@
 .homescreennew {
   position: absolute;
   height: 70vh;
+  width: 100%;
   top: 50%;
   left: 50%;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 55px;
   transform: translate(-50%, -50%);
 }
-.sneakerS {
-  width: 1400px;
-  width: 100%;
-  padding-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(2, 500px);
-  column-gap: 155px;
-  justify-content: center;
-  align-items: center;
-}
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-30px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-
-.sneaker__home {
-  width: 600px;
-  animation: float 5s ease-in-out infinite;
-}
-.infos {
+.homescreennew__inside {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-
-  gap: 0px;
-  padding: 0rem;
+  flex-direction: column;
 }
 
-.infos > p {
-  font-size: 90px;
-  text-transform: lowercase;
-  font-weight: 600;
-  z-index: 12;
-}
-.homescreennew > a {
-  width: 200px;
+.homescreennew__inside > a {
+  width: 250px;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -61,22 +22,25 @@
   background-color: black;
   color: #ffffff;
   font-size: 25px;
+  padding: 2rem;
   text-decoration: none;
-
+  margin-top: 5rem;
   z-index: 13;
 }
 .before__footer {
-  width: 100vw;
+  width: 100%;
+  margin-top: 5rem;
+  padding: 1.5rem 1.5rem;
   height: 500px;
-  background: url("../assets/seaConverse.jpg");
+  background: url("../assets/sea.jpg");
   background-position: center;
-  color: #fca311;
+  color: black;
   font-size: 65px;
   display: flex;
   flex-direction: column;
-  padding-top: 3rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .before__footer > p {
   color: #ffffff;
@@ -84,4 +48,18 @@
 
 .home__footer {
   height: 100px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .homescreennew__inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

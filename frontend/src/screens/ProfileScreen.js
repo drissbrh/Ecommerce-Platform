@@ -10,8 +10,8 @@ const ProfileScreen = () => {
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
-  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-  const { userInfo, success, error, loading } = userUpdateProfile;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo, success, error, loading } = userLogin;
 
   const userDetails = useSelector((state) => state.userDetails);
   const {
@@ -30,18 +30,18 @@ const ProfileScreen = () => {
       <form className="profile__elements" onSubmit={handleSubmit}>
         <div className="info__side">
           <h2>My personal info</h2>
-          {user && (
+          {userInfo && (
             <>
               <div className="profile__details">
                 <img src={patientPic} alt="profile pic" />
-                <p>{user.name}</p>
+                <p>{userInfo.name}</p>
               </div>
               <>
                 <div className="name__section">
                   <label>Name</label>
                   <input
                     type="name"
-                    placeholder={user.name}
+                    placeholder={userInfo.name}
                     value={name}
                     onChange={(e) => {
                       setName(e.target.value);
@@ -52,7 +52,7 @@ const ProfileScreen = () => {
                   <label>Email</label>
                   <input
                     type="email"
-                    placeholder={user.email}
+                    placeholder={userInfo.email}
                     value={email}
                     onChange={(e) => {
                       setEmail(e.target.value);

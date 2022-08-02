@@ -11,8 +11,8 @@ import { AllSneakers } from "../redux/actions/sneakerActions";
 import { useParams } from "react-router-dom";
 
 const HomeScreen = () => {
-  const { Page } = useParams();
-  const pageNumber = Page;
+  const pageNumber = useParams().pageNumber;
+
   const dispatch = useDispatch();
 
   const sneakersList = useSelector((state) => state.sneakersList);
@@ -45,7 +45,6 @@ const HomeScreen = () => {
                 media={product.media}
               />
             ))}
-            <></>
           </>
         )}
       </div>

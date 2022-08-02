@@ -27,7 +27,9 @@ const Navbar = ({ click }) => {
       </div>
       <ul className="navbar__links">
         <li>
-          <Link to="/home">Shop</Link>
+          <Link to="/home">
+            <i className="fa-solid fa-shop"></i>
+          </Link>
         </li>
         {userInfo ? (
           <>
@@ -35,21 +37,24 @@ const Navbar = ({ click }) => {
               <Link to="/cart" className="cart__link">
                 <i className="fas fa-shopping-cart"></i>
                 <span>
-                  Cart
                   <span className="cartlogo__badge">{getCartCount()}</span>
                 </span>
               </Link>
             </li>
             <li>
-              <Link to="/profile">{userInfo.name.split(" ")[0]}</Link>
+              <Link to="/profile">
+                <i className="fa-solid fa-user"></i>
+              </Link>
             </li>
             <li className="logoutItem" onClick={logoutHandler}>
-              logout
+              <i className="fa-solid fa-arrow-right-from-bracket"></i>
             </li>
           </>
         ) : (
           <li>
-            <Link to="/login">Sign In</Link>
+            <Link to="/login">
+              <i className="fa-solid fa-arrow-right-to-bracket"></i>
+            </Link>
           </li>
         )}
       </ul>
