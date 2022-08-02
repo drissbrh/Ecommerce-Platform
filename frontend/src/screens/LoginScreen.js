@@ -10,16 +10,17 @@ const LoginScreen = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const search = useLocation().search;
 
-  const [message, setMessage] = useState(null);
-
+  // const [message, setMessage] = useState(null);
+  const redirect = search ? search.split("=")[1] : "/";
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo, error, loading } = userLogin;
   useEffect(() => {
     if (userInfo) {
-      navigate("/home");
+      navigate(redirect);
     }
-  }, [userInfo, navigate]);
+  }, [userInfo, navigate, redirect]);
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser(email, password));

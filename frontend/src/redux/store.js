@@ -17,6 +17,17 @@ import {
   userUpdateProfileReducer,
   userUpdateReducer,
 } from "./reducers/userReducer";
+import {
+  orderCreateReducer,
+  orderDeleteReducer,
+  orderDeliverReducer,
+  orderDetailsReducer,
+  orderListMyReducer,
+  orderListReducer,
+  orderMineListReducer,
+  orderPayReducer,
+  orderSummaryReducer,
+} from "./reducers/orderReducer";
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
@@ -29,6 +40,13 @@ const reducer = combineReducers({
   sneakersList: SneakersListReducer,
   sneakerDetails: SneakerDetailsReducer,
   cart: cartReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
+  orderListMine: orderListMyReducer,
+  orderList: orderListReducer,
+
+  orderDeliver: orderDeliverReducer,
 });
 
 const middlware = [thunk];

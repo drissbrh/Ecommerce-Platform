@@ -8,6 +8,7 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 //Routes
 import sneakerRoutes from "./routes/sneakerRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 
 dotenv.config();
 
@@ -18,6 +19,10 @@ app.use(express.json());
 
 app.use("/api/sneakers", sneakerRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRouter);
+app.get("/api/config/paypal", (req, res) =>
+  res.send(process.env.PAYPAL_CLIENT_ID)
+);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

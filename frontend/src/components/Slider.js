@@ -3,6 +3,7 @@ import "./Slider.css";
 import BtnSlider from "./BtnSlider";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -44,6 +45,7 @@ const Slider = () => {
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
             <img src={obj.media} />
+
             <p>{obj.name}</p>
           </div>
         );

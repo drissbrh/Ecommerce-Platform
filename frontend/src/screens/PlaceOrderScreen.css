@@ -1,0 +1,56 @@
+/* .placeorderscreen {
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+} */
+
+.row.top {
+  align-items: flex-start;
+}
+
+/* Card */
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.card > ul {
+  list-style: none;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+
+.col-1 {
+  flex: 1 1 25rem;
+}
+
+button.primary {
+  background-color: #f72585;
+}
+button.block {
+  width: 100%;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #f72585 solid;
+  color: #f8f8f8;
+}
+button {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+  border: 0.1rem #404040 solid;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CartScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -7,13 +7,20 @@ import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 
 //components
 import CartItem from "../components/CartItem";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { USER_DETAILS_RESET } from "../redux/constants/userConstants";
+import { ORDER_CREATE_RESET } from "../redux/constants/orderConstants";
 
 const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const productId = useParams().id;
+  const search = useLocation().search;
+  const qty = search ? Number(search.split("=")[1]) : 1;
 
   const quantityHandlerchange = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -27,7 +34,20 @@ const CartScreen = () => {
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2);
   };
+  const checkoutHandler = () => {
+    navigate("/shipping");
+  };
 
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+  useEffect(() => {
+    if (success) {
+      navigate(`/order/${order._id}`);
+      dispatch({ type: USER_DETAILS_RESET });
+      dispatch({ type: ORDER_CREATE_RESET });
+    }
+    // eslint-disable-next-line
+  }, [navigate, dispatch, success]);
   return (
     <>
       <div className="cartscreen">
@@ -78,7 +98,12 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button onClick={() => console.log("ana nachit")}>
+            <button
+              type="button"
+              onClick={checkoutHandler}
+              className="primary block"
+              disabled={cartItems.length === 0}
+            >
               Proceed To Checkout
             </button>
           </div>
