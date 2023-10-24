@@ -1,4 +1,4 @@
-# Mini Shopping Cart
+# Ecommerce-Platform
 
 It's a intermediate project made with React, Redux, MongoDB, Express & NodeJS, fully functional and Responsive, with a good looking UI and a better UX
 
