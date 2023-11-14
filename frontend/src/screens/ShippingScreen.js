@@ -29,7 +29,7 @@ const ShippingScreen = () => {
       <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <form onSubmit={submitHandler}>
-        <div controlId="address">
+        <div controlId="address" className="shipping__input">
           <label>Address</label>
           <input
             type="text"
@@ -40,7 +40,7 @@ const ShippingScreen = () => {
           />
         </div>
 
-        <div controlId="city">
+        <div controlId="city" className="shipping__input">
           <label>City</label>
           <input
             type="text"
@@ -51,7 +51,7 @@ const ShippingScreen = () => {
           />
         </div>
 
-        <div controlId="postalCode">
+        <div controlId="postalCode" className="shipping__input">
           <label>Postal Code</label>
           <input
             type="text"
@@ -62,7 +62,7 @@ const ShippingScreen = () => {
           />
         </div>
 
-        <div controlId="country">
+        <div controlId="country" className="shipping__input">
           <label>Country</label>
           <input
             type="text"
@@ -73,7 +73,9 @@ const ShippingScreen = () => {
           />
         </div>
 
-        <button type="submit">Continue</button>
+        <button type="submit" className="shipping__button">
+          Continue
+        </button>
       </form>
     </div>
   );

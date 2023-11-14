@@ -17,3 +17,22 @@
   border-top-color: #f72585;
   color: #f72585;
 }
+
+@media (max-width: 860px) {
+  .checkout-steps > div {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .checkout-steps > div {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .checkout-steps > div {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}

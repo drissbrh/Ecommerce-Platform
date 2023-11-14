@@ -1,0 +1,68 @@
+.shippingaddress {
+}
+.shippingaddress > h1 {
+  margin: 4rem;
+}
+
+.shippingaddress > form {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  width: 500px;
+  margin: 4rem;
+}
+
+.shipping__button {
+  padding: 15px;
+  width: 200px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  background-color: #0a2472;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.shipping__button:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.shipping__input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shipping__input > label {
+  font-size: 27px;
+}
+.shipping__input > input {
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid #ffffff;
+  background-color: #f4f4f4;
+  font-size: 22px;
+  padding: 12px;
+  width: 350px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+.shipping__input > input:focus {
+  border: 2px solid #00072d;
+  padding: 12px;
+  width: 350px;
+  outline: none;
+}
+
+@media (max-width: 590px) {
+  .shippingaddress > form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
